@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import GardenDiv from '../src/containers/GardenDiv'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const url = 'http://localhost:3000/api/v1/gardens'
+
+class App extends React.Component{
+  state={gardens:[]}
+  fetchGarden = () =>{
+    fetch(url)
+    .then(r=>r.json)
+    .then(data =>this.setState({gardens: data}))
+  }
+  render(){
+      return(<div className="garden-div">
+        <GardenDiv gardens={this.state.gardens}/>
+      </div>
+      )
+  }
 }
 
-export default App;
+export default App
