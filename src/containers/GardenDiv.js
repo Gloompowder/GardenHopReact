@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import GardenCard from '../components/GardenCard'
 
 function GardenDiv(){
-    const gardens = this.props.gardens.map(eachGarden => <GardenCard garden={eachGarden} key={eachGarden.id}/>)
-    console.log(gardens)
+    const url = 'http://localhost:3000/api/v1/gardens'
+    const [gardens, setGardens] = useState([])
+    useEffect(()=>{
+        fetch(url)
+        .then(r=>r.json())
+        .then(data =>setGardens(data))
+    })
+    const gardenCards = gardens.map(eachGarden => <GardenCard garden={eachGarden} key={eachGarden.id}/>)
     return(
         <div className="gardens">
-            {gardens}
+            {gardenCards}
         </div>
     )
 }
