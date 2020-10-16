@@ -1,16 +1,14 @@
 import React from 'react'
 import GardenCard from '../components/GardenCard'
 
-class GardenDiv extends React.Component{
-    render(){
-        const garden= this.props.gardens.map(eachgarden => <GardenCard garden={eachgarden} key={eachgarden.id}/>)
-        console.log(this.props.gardens)
-        return(
-            <div className="gardens">
-                {garden}
-            </div>
-        )
-    }
+function GardenDiv(){
+    const gardens = this.props.gardens.map(eachGarden => <GardenCard garden={eachGarden} key={eachGarden.id}/>)
+    console.log(gardens)
+    return(
+        <div className="gardens">
+            {gardens}
+        </div>
+    )
 }
 
 export default GardenDiv

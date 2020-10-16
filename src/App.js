@@ -6,13 +6,14 @@ const url = 'http://localhost:3000/api/v1/gardens'
 
 class App extends React.Component{
   state={gardens:[]}
-  fetchGarden = () =>{
+  componentDidMount(){
     fetch(url)
-    .then(r=>r.json)
+    .then(r=>r.json())
     .then(data =>this.setState({gardens: data}))
   }
   render(){
-      return(<div className="garden-div">
+      return(
+      <div className="garden-div">
         <GardenDiv gardens={this.state.gardens}/>
       </div>
       )
