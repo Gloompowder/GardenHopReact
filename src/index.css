@@ -11,3 +11,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-bar {
+  background-color:rgb(0, 92, 0);
+  color: white;
+  padding: .5%;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-around;
+}
+
+.nav-links {
+  min-width: 500px;
+  justify-content: flex-end;
+  display: inline-flex;
+}
+
+.nav-links p {
+  padding-left: 10px;
+}
+
+.logo {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10%;
+  margin-left: 1%;
+  width: auto;
+  height: 20px;
+}
+
+.search {
+  min-height: 180px;
+  max-height: 300px;
+  min-width:500px;
+  width: auto;
+  background-color: rgb(187, 255, 187);
+}
+
+.gardens {
+  background-color: rgb(214, 214, 214);
+  justify-content: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  padding-top: 2.5%;
+}
+.garden-div {
+  justify-content: auto;
+}
+.garden-card {
+  background-color: rgb(255, 255, 255);
+  min-width: 250px;
+  border-radius: 2.5%;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 20%;
+  margin:2.5%;
+  color: rgb(94, 94, 94);
+}
+
+.garden-card:hover {
+  box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
+}
+
+.garden-container {
+  padding: 2px 10px;
+  margin:5%;
+}

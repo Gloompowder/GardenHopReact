@@ -13,6 +13,7 @@ function GardenDiv(){
     return(
         <div className="gardens">
             {gardenCards}
+            {/* if map, map container, else garden cards container*/}
         </div>
     )
 }
