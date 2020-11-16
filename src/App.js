@@ -7,6 +7,7 @@ import Search from '../src/components/Search'
 import GardenCard from '../src/containers/GardenDiv'
 import Home from '../src/components/Home'
 import ProfileDiv from '../src/components/ProfileDiv'
+
 import {
   BrowserRouter as Router,
   Switch,
