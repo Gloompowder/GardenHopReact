@@ -11,8 +11,7 @@ function GardenDiv(props){
         .then(data =>setGardens(data))
     })
 
-    const [toggleMap, setToggle] = useState([])
-        const gardenCards = gardens.map(eachGarden => <GardenCard garden={eachGarden} key={eachGarden.id}/>)
+    const gardenCards = gardens.map(eachGarden => <GardenCard garden={eachGarden} key={eachGarden.id}/>)
     return(
         <div className="gardens">
             <MapDiv gardens = {gardenCards}/>
