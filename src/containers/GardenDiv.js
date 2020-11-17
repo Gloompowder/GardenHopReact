@@ -11,10 +11,19 @@ function GardenDiv(props){
         .then(data =>setGardens(data))
     })
 
+    const [toggleMap, setToggle] = useState(false)
+    function setToggle(){
+        return <button 
+        className = "map-button" 
+        onClick={() => {toggleMap===false ? setToggle(true) : setToggle(false)}}>
+        </button>
+    }
+
+
     const gardenCards = gardens.map(eachGarden => <GardenCard garden={eachGarden} key={eachGarden.id}/>)
     return(
         <div className="gardens">
-            <MapDiv gardens = {gardenCards}/>
+            {<MapDiv gardens = {gardenCards} mapButton={setToggle}/>}
             {gardenCards}
         </div>
     )
