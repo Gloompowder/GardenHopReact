@@ -19,11 +19,10 @@ function GardenDiv(props){
         </button>
     }
 
-
     const gardenCards = gardens.map(eachGarden => <GardenCard garden={eachGarden} key={eachGarden.id}/>)
     return(
         <div className="gardens">
-            {<MapDiv gardens = {gardenCards} mapButton={setToggle}/>}
+            {toggleMap === true ? <MapDiv gardens = {gardenCards} mapButton={setToggle}/> : nil}
             {gardenCards}
         </div>
     )
