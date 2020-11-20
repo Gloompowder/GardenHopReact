@@ -56,6 +56,18 @@ code {
   display: flex;
   justify-content: space-evenly;
 }
+
+.garden-container {
+  justify-content: space-evenly;
+}
+
+.mapButton {
+  /* margin-bottom: .5%;
+  margin-left: 45%;
+  margin-right: 45%; */
+  margin: 0 45% .5%;
+}
+
 .garden-div {
   justify-content: auto;
 }

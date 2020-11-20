@@ -67,11 +67,11 @@ function MapDiv(props){
     const gardenMarkers = props.gardens.map(garden =>{ 
         return(
             <Marker 
-            key={garden.id}            
-            position={[parseFloat(garden.props.garden.latitude),parseFloat(garden.props.garden.longitude)]}>
+            key={garden.id}         
+            position={[parseFloat(garden.latitude),parseFloat(garden.longitude)]}>
                 <Popup>
-                    <h1>{garden.props.garden.address}</h1>
-                    <p>Property Id: {garden.props.garden.property_id}</p>
+                    <h1>{garden.address}</h1>
+                    <p>Property Id: {garden.property_id}</p>
                 </Popup>
             </Marker>
         )
