@@ -1,10 +1,13 @@
-const searches = (state, action)=>{
+export const searches = (state, action)=>{
+    console.log(state)
+    console.log(action)
     switch(action.type) {
         case "SEARCH_GARDENS":
-            return action.searchTerm
+            return {...state, keyword: action.searchTerm}
+        case "SEARCH_ADDRESS":
+            return {...state, address: action.searchTerm}
         default: 
-            return state
+            return {address:"", keyword: ""}
     }
 }
 
-export default searches

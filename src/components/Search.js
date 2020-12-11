@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
-function Search(props){
+import { connect } from 'react-redux'
+import { searchGardens, searchAddress } from '../actions'
+
+
+function Search({dispatch}){
     // const [mapToggled, setmapToggled] = useState(false)
 
     // const togglingMap=()=>{
@@ -22,13 +26,27 @@ function Search(props){
     // taking the data and getting each object before calling setgardens
     // data.props.garden
     // setGardens(data.props.garden)
-      setSearches(e.target.value) 
+        e.preventDefault()
+        dispatch(searchGardens(e.target.value))
+        setSearches(e.target.value) 
 }
+    const [addressSearches, setAddressSearches] = useState("")
+
+    const addressSearching = (e) => {
+        e.preventDefault()
+        console.log(searchAddress(e.target.value))
+        dispatch(searchAddress(e.target.value))
+        setAddressSearches(e.target.value)
+    }    
     return(
             <form className="search">
                 <input type="text" onChange={searching}/>
+                <br></br>
+                <input type="text" onChange={addressSearching}/>
             </form>
     )
 }
+
+Search = connect()(Search)
 
 export default Search
