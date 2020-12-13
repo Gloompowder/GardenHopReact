@@ -12,7 +12,7 @@ function GardenDiv(){
     const [queryUrl, setQueryUrl] = useState()
 
     useEffect(()=>{
-        setQueryUrl(`${indexUrl}?keyword=${searchData?.keyword}?address=${searchData?.address}`)
+        setQueryUrl(`${indexUrl}?keyword=${searchData?.keyword}?address=${searchData?.address}?distance=${searchData?.distance}`)
     },[searchData])
     
 

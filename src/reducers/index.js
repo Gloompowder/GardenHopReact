@@ -6,8 +6,10 @@ export const searches = (state, action)=>{
             return {...state, keyword: action.searchTerm}
         case "SEARCH_ADDRESS":
             return {...state, address: action.searchTerm}
+        case "SEARCH_DISTANCE":
+            return {...state, distance: action.searchTerm}
         default: 
-            return {address:"", keyword: ""}
+            return {address:"", keyword: "", distance:""}
     }
 }
 

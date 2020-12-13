@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { connect } from 'react-redux'
-import { searchGardens, searchAddress } from '../actions'
+import { searchGardens, searchAddress, searchDistance } from '../actions'
 
 
 function Search({dispatch}){
@@ -38,11 +38,21 @@ function Search({dispatch}){
         dispatch(searchAddress(e.target.value))
         setAddressSearches(e.target.value)
     }    
+    const [distanceSearches, setDistanceSearches] = useState("")
+
+    const distanceSearching = (e) => {
+        e.preventDefault()
+        console.log(searchAddress(e.target.value))
+        dispatch(searchDistance(e.target.value))
+        setDistanceSearches(e.target.value)
+    }    
     return(
             <form className="search">
                 <input type="text" onChange={searching}/>
                 <br></br>
                 <input type="text" onChange={addressSearching}/>
+                <br></br>
+                <input type="text" onChange={distanceSearching}/>
             </form>
     )
 }
